@@ -4,6 +4,7 @@ import { GetAllResponse, HttpService } from './http-service';
 export interface Game {
   id: string;
   name: string;
+  background_image: string;
 }
 
 class GameService extends HttpService {
