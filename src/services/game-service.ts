@@ -1,4 +1,4 @@
-import { AxiosResponse } from 'axios';
+import { AxiosResponse, AxiosRequestConfig } from 'axios';
 import { GetAllResponse, HttpService } from './http-service';
 
 export interface Game {
@@ -11,8 +11,10 @@ class GameService extends HttpService {
     super('games');
   }
 
-  getAll(): Promise<AxiosResponse<GetAllResponse<Game>>> {
-    return super.fetchAll<Game>();
+  getAll(
+    config?: AxiosRequestConfig
+  ): Promise<AxiosResponse<GetAllResponse<Game>>> {
+    return super.fetchAll<Game>(config);
   }
 }
 

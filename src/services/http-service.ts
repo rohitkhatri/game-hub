@@ -1,4 +1,4 @@
-import { AxiosResponse } from 'axios';
+import { AxiosResponse, AxiosRequestConfig } from 'axios';
 import apiClient from './api-client';
 
 export interface GetAllResponse<T> {
@@ -15,8 +15,10 @@ export class HttpService {
     this.endpoint = endpoint;
   }
 
-  async fetchAll<T>(): Promise<AxiosResponse<GetAllResponse<T>>> {
-    return apiClient.get<GetAllResponse<T>>(this.endpoint);
+  async fetchAll<T>(
+    config?: AxiosRequestConfig
+  ): Promise<AxiosResponse<GetAllResponse<T>>> {
+    return apiClient.get<GetAllResponse<T>>(this.endpoint, config);
   }
 }
 
