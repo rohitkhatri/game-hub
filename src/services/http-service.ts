@@ -8,6 +8,12 @@ export interface GetAllResponse<T> {
   results: Array<T>;
 }
 
+export interface GetAllFunction<T> {
+  getAll: (
+    config?: AxiosRequestConfig
+  ) => Promise<AxiosResponse<GetAllResponse<T>>>;
+}
+
 export class HttpService {
   protected endpoint: string;
 
