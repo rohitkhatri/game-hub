@@ -15,7 +15,7 @@ class GenreService extends HttpService {
   getAll(
     config?: AxiosRequestConfig
   ): Promise<AxiosResponse<GetAllResponse<Genre>>> {
-    return super.fetchAll<Genre>(config);
+    return super.fetchAll<Genre>(undefined, config);
   }
 }
 

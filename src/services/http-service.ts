@@ -22,9 +22,13 @@ export class HttpService {
   }
 
   async fetchAll<T>(
+    endpoint?: string,
     config?: AxiosRequestConfig
   ): Promise<AxiosResponse<GetAllResponse<T>>> {
-    return apiClient.get<GetAllResponse<T>>(this.endpoint, config);
+    return apiClient.get<GetAllResponse<T>>(
+      endpoint ? `${this.endpoint}${endpoint}` : this.endpoint,
+      config
+    );
   }
 }
 

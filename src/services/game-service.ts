@@ -1,17 +1,12 @@
 import { AxiosResponse, AxiosRequestConfig } from 'axios';
 import { GetAllResponse, HttpService } from './http-service';
-
-export interface GamePlatform {
-  id: number;
-  name: string;
-  slug: string;
-}
+import { Platform } from './platform-service';
 
 export interface Game {
   id: string;
   name: string;
   background_image: string;
-  parent_platforms: { platform: GamePlatform }[];
+  parent_platforms: { platform: Platform }[];
   metacritic: number;
 }
 
@@ -23,7 +18,7 @@ class GameService extends HttpService {
   getAll(
     config?: AxiosRequestConfig
   ): Promise<AxiosResponse<GetAllResponse<Game>>> {
-    return super.fetchAll<Game>(config);
+    return super.fetchAll<Game>(undefined, config);
   }
 }
 
