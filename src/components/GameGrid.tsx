@@ -18,7 +18,7 @@ export default function GameGrid() {
           lg: 3,
           xl: 5,
         }}
-        spacing={10}
+        spacing={5}
         padding="10px"
       >
         {isLoading &&

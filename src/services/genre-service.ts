@@ -4,6 +4,7 @@ import { GetAllResponse, HttpService } from './http-service';
 export interface Genre {
   id: string;
   name: string;
+  image_background: string;
 }
 
 class GenreService extends HttpService {
