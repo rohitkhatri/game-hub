@@ -2,7 +2,7 @@ import { AxiosResponse, AxiosRequestConfig } from 'axios';
 import { GetAllResponse, HttpService } from './http-service';
 
 export interface Genre {
-  id: string;
+  id: number;
   name: string;
   image_background: string;
 }

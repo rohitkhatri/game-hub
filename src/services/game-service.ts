@@ -3,7 +3,7 @@ import { GetAllResponse, HttpService } from './http-service';
 import { Platform } from './platform-service';
 
 export interface Game {
-  id: string;
+  id: number;
   name: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
