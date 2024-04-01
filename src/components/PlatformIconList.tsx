@@ -11,10 +11,10 @@ import { MdPhoneIphone } from 'react-icons/md';
 import { SiNintendo } from 'react-icons/si';
 import { BsGlobe } from 'react-icons/bs';
 import { IconType } from 'react-icons';
-import { GamePlatform } from '../services/game-service';
+import { Platform } from '../services/platform-service';
 
 interface Props {
-  platforms: GamePlatform[];
+  platforms: Platform[];
 }
 
 const iconMap: { [key: string]: IconType } = {
