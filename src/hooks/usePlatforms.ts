@@ -1,6 +1,5 @@
-import platformSvc, { Platform } from '../services/platform-service';
-import useData from './useData';
+import platforms from '../data/platforms';
 
-const usePlatforms = () => useData<Platform>(platformSvc);
+const usePlatforms = () => ({ data: platforms, isLoading: false, error: null });
 
 export default usePlatforms;
